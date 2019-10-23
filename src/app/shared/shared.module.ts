@@ -4,6 +4,7 @@ import {RouterModule} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { sharedComponents } from './components';
 import { services } from './services';
+import { PublicEmployeeFormComponent } from './components/public-employee-form/public-employee-form.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { services } from './services';
     FormsModule
   ],
   declarations: [
-    ...sharedComponents
+    ...sharedComponents,
   ],
   exports: [...sharedComponents],
   providers: [...services]
