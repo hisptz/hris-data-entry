@@ -1,10 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as fromHelpers from './shared/helpers';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'hris-data-entry';
+export class AppComponent implements OnInit {
+
+  isFormSelected: boolean;
+  isPeriodSelected: boolean;
+  selectedForm: any;
+  periods: any[];
+
+  constructor() {
+    this.periods = fromHelpers.getPeriodsBasedOnType('Yearly', new Date().getFullYear());
+  }
+
+  ngOnInit() {}
+
+  formSelect(e) {
+    this.isFormSelected = true;
+    this.selectedForm =  e.target.value;
+  }
+
+  periodSelect(e) {
+    this.isPeriodSelected = true;
+  }
 }

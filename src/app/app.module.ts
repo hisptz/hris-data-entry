@@ -10,6 +10,10 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { effects } from './store/effects';
 import { SharedModule } from './shared/shared.module';
+import { HrisMenuModule } from '@iapps/hris-menu';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    HrisMenuModule,
+    HttpClientModule,
+    FormsModule,
     SharedModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],

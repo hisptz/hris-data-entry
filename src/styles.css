@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.font-x-large {
+  font-size: x-large;
+}
+
+.font-large {
+  font-size: large;
+}
+
+.font-larger {
+  font-size: larger;
+}
+
+.font-size-xx-large {
+  font-size: xx-large;
+}
+  
+
+/* Modify Scor-bar CSS
+ - WebKit-based browsers (such as Chrome and Safari)
+*/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  background: #ccc;
+  /* background:#888; */
+}
+::-webkit-scrollbar-track-piece {
+  background: #ccc;
+}
+::-webkit-scrollbar-thumb {
+  background: #eee;
+}
+/* Modify Scor-bar CSS */
