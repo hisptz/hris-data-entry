@@ -1,5 +1,5 @@
-import { PageStateEffects } from './page-state.effects';
+import { UserEffects } from './user.effects';
+import { SystemInfoEffects } from './system-info.effects';
+import { RouterEffects } from './router.effects';
 
-export const effects: any[] = [
-    PageStateEffects
-];
+export const effects: any[] = [UserEffects, SystemInfoEffects, RouterEffects];

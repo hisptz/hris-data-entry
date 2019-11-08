@@ -1,22 +1,30 @@
-import {
-  ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  MetaReducer
-} from '@ngrx/store';
+import { routerReducer, RouterReducerState } from '@ngrx/router-store';
+import { ActionReducerMap, MetaReducer } from '@ngrx/store';
+import { storeFreeze } from 'ngrx-store-freeze';
+
 import { environment } from '../../../environments/environment';
-import * as fromPageState from './page-state.reducer';
+import { SystemInfoState } from '../states/system-info.state';
+import { UserState } from '../states/user.state';
+import { systemInfoReducer } from './system-info.reducer';
+import { userReducer } from './user.reducer';
 
 export interface State {
-
-  pageStates: fromPageState.State;
+  user: UserState;
+  systemInfo: SystemInfoState;
+  router: RouterReducerState;
 }
 
 export const reducers: ActionReducerMap<State> = {
-
-  pageStates: fromPageState.reducer,
+  user: userReducer,
+  systemInfo: systemInfoReducer,
+  router: routerReducer
 };
 
+export const metaReducers: MetaReducer<State>[] = !environment.production
+  ? [storeFreeze]
+  : [];
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+/**
+ * Root state selector
+ */
+export const getRootState = (state: State) => state;
