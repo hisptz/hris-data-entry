@@ -17,6 +17,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatCheckboxModule,
     MatSlideToggleModule,
     MatProgressBarModule,
-    MatIconModule
+    MatIconModule,
+    MatRippleModule
   ],
   exports: [
     MatButtonModule,
@@ -54,7 +56,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatCheckboxModule,
     MatSlideToggleModule,
     MatProgressBarModule,
-    MatIconModule
+    MatIconModule,
+    MatRippleModule
   ],
   declarations: []
 })

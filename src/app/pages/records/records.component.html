@@ -1,25 +1,23 @@
 <div class="container-fluid">
   <div class="row ">
-    <div class="col-3 mt-3">
+    <div class="col-2 mt-3">
       <ngx-dhis2-org-unit-filter [orgUnitFilterConfig]="orgUnitFilterConfig"></ngx-dhis2-org-unit-filter>
     </div>
-    <div class="col-9 mt-4">
-      <h2>Records for [selected organisation unit]</h2>
+    <div class="col-10 mt-4">
+      <mat-form-field class="w-25">
+        <mat-label>Form</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let recordType of recordTypes" [value]="recordType.id">
+            {{recordType.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
       <!-- search section -->
       <div class="row">
         <div class="col-sm-7">
           <mat-form-field class="mr-4">
             <input matInput placeholder="Search by name">
-          </mat-form-field>
-
-          <mat-form-field>
-            <mat-label>Record Type</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let recordType of recordTypes" [value]="recordType.id">
-                {{recordType.name}}
-              </mat-option>
-            </mat-select>
           </mat-form-field>
         </div>
 
@@ -78,7 +76,8 @@
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr class="record-row" mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="onSelectRecord($event, row)"></tr>
         </table>
 
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

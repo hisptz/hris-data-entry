@@ -1,3 +1,36 @@
-<p>
-  manage-record works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mt-4">
+      <div class="d-flex align-items-center">
+        <button mat-icon-button class="mr-4" [routerLink]="['']">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <h3 class="mt-3">Record Form for [Selected organisation unit]</h3>
+      </div>
+
+      <!-- record type -->
+      <div class="mt-3 record-entry-section">
+        <mat-form-field class="w-25">
+          <mat-label>Record Type</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let recordType of recordTypes" [value]="recordType.id">
+              {{recordType.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- form content -->
+        <mat-tab-group>
+          <mat-tab label="Basic">
+            <div></div>
+          </mat-tab>
+          <mat-tab label="Education">Content 2</mat-tab>
+          <mat-tab label="Designation">Content 3</mat-tab>
+        </mat-tab-group>
+        <!-- end of form content -->
+      </div>
+      <!-- end of record type -->
+
+    </div>
+  </div>
+</div>

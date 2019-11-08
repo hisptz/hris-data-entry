@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-record.component.css']
 })
 export class ManageRecordComponent implements OnInit {
-
-  constructor() { }
+  recordTypes: any[];
+  constructor() {}
 
   ngOnInit() {
+    this.recordTypes = [
+      {
+        id: 'PRIVATE',
+        name: 'Private'
+      },
+      {
+        id: 'PUBLIC',
+        name: 'Public'
+      }
+    ];
   }
-
 }

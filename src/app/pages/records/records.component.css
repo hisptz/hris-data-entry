@@ -12,3 +12,7 @@ th.mat-sort-header-sorted {
   bottom: 20px;
   z-index: 500;
 }
+
+.record-row {
+  cursor: pointer;
+}

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ManageRecordComponent } from './manage-record.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ManageRecordComponent', () => {
   let component: ManageRecordComponent;
@@ -8,9 +11,9 @@ describe('ManageRecordComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ManageRecordComponent ]
-    })
-    .compileComponents();
+      declarations: [ManageRecordComponent],
+      imports: [RouterTestingModule, SharedModule, BrowserAnimationsModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

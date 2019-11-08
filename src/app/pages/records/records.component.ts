@@ -2,6 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { OrgUnitFilterConfig } from '@iapps/ngx-dhis2-org-unit-filter';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { Store } from '@ngrx/store';
+import { State } from 'src/app/store/reducers';
+import { go } from 'src/app/store/actions';
 
 export interface PeriodicElement {
   name: string;
@@ -42,7 +45,7 @@ export class RecordsComponent implements OnInit {
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor() {}
+  constructor(private store: Store<State>) {}
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
@@ -56,12 +59,17 @@ export class RecordsComponent implements OnInit {
     this.recordTypes = [
       {
         id: 'PRIVATE',
-        name: 'Private'
+        name: 'Employee Form'
       },
       {
         id: 'PUBLIC',
-        name: 'Public'
+        name: 'Sponsorship form'
       }
     ];
+  }
+
+  onSelectRecord(e, record) {
+    e.stopPropagation();
+    this.store.dispatch(go({ path: [`record/${record.position}`] }));
   }
 }
