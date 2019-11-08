@@ -19,10 +19,12 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { RoutingModule } from './app.routes';
 import { CoreModule, RouteSerializer } from './core';
-import { ManageRecordComponent } from './pages/manage-record/manage-record.component';
-import { RecordsComponent } from './pages/records/records.component';
 import { effects } from './store/effects';
 import { metaReducers, reducers } from './store/reducers';
+import { RecordsComponent } from './pages/records/records.component';
+import { ManageRecordComponent } from './pages/manage-record/manage-record.component';
+import { NgxDhis2OrgUnitFilterModule } from '@iapps/ngx-dhis2-org-unit-filter';
+import { SharedModule } from './shared/shared.module';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -35,6 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     HttpClientModule,
     RoutingModule,
+    SharedModule,
     CoreModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
@@ -59,6 +62,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+
+    NgxDhis2OrgUnitFilterModule,
 
     /**
      * @ngrx/router-store keeps router state up-to-date in the store
