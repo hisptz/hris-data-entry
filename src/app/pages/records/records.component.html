@@ -7,8 +7,8 @@
       <h2>Records for [selected organisation unit]</h2>
 
       <!-- search section -->
-      <div class="d-flex justify-content-between">
-        <div>
+      <div class="row">
+        <div class="col-sm-7">
           <mat-form-field class="mr-4">
             <input matInput placeholder="Search by name">
           </mat-form-field>
@@ -23,7 +23,14 @@
           </mat-form-field>
         </div>
 
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        <div class="col-sm-5 d-flex justify-content-end" style="height: 45px;">
+          <!-- add new button -->
+          <button mat-flat-button color="primary" matTooltip="Add new record" [matTooltipPosition]="'above'"
+            [routerLink]="['record/new']">
+            Create Record
+          </button>
+          <!-- end of add new button -->
+        </div>
       </div>
       <!-- end of search section -->
 
