@@ -19,10 +19,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {}
 
-  formSelect(e) {
-    this.isFormSelected = true;
-    this.selectedForm =  e.target.value;
-  }
+  
 
   periodSelect(e) {
     this.isPeriodSelected = true;
