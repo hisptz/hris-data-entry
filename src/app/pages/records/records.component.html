@@ -7,7 +7,7 @@
     </div>
     <div class="col-sm-4 pr-0">
         <button class="mt-2 pull-right"
-        mat-raised-button color="primary">Add Record</button>
+        mat-raised-button color="primary" [routerLink]="'../newrecord'">Add Record</button>
     </div>
 </div>
 
@@ -52,7 +52,8 @@
           </button>
           <mat-menu #menu="matMenu">
 
-              <button mat-menu-item>
+              <button mat-menu-item
+              [routerLink]="'../newrecord'">
                 <mat-icon>edit</mat-icon>
                 <span>Edit</span>
               </button>
