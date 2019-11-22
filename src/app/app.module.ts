@@ -14,10 +14,14 @@ import { HrisMenuModule } from '@iapps/hris-menu';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { pagesComponent } from './pages';
+import { RecordsComponent } from './pages/records/records.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ...pagesComponent,
+    RecordsComponent
   ],
   imports: [
     BrowserModule,

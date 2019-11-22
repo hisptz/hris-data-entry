@@ -1,19 +1,1 @@
 
-.label-selection-width {
-    width: 190px;
-}
-
-.green-background-selection {
-    background-color: #d0ebd0;
-}
-
-.cretaria-selection-older {
-  display: flex;
-}
-
-
-@media (max-width: 990px) {
-    .cretaria-selection-older {
-        display: block;
-    }
-}
