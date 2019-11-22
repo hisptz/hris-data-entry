@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as fromHelpers from './shared/helpers';
+import { formsMetadata } from '../assets/dummy-data/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import * as fromHelpers from './shared/helpers';
 })
 export class AppComponent implements OnInit {
 
-  isFormSelected: boolean;
+  
   isPeriodSelected: boolean;
   selectedForm: any;
   periods: any[];
