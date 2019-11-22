@@ -16,6 +16,10 @@
 .font-size-xx-large {
   font-size: xx-large;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
   
 
 /* Modify Scor-bar CSS

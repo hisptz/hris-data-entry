@@ -1,0 +1,26 @@
+<div class="container-fluid pl-0 pr-0">
+    <div class="row w-100 ml-0 mr-0">
+        <div class="col-sm-auto pl-0"> <mat-icon matRipple class="mt-2 cursor-pointer">keyboard_backspace</mat-icon> </div>
+        <div class="col-sm-10">
+            <label class="font-size-xx-large"> Record Form for [Selected organisation unit]</label>
+            <div class="row w-100 ml-0 mr-0 d-block">
+              <mat-form-field class="w-25">
+                <mat-label>Form Selection</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let recordType of recordTypes" [value]="recordType">
+                    {{ recordType }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="row w-100 ml-0 mr-0">
+                <mat-tab-group class="w-100">
+                  <mat-tab label="Basic"> Basic </mat-tab>
+                  <mat-tab label="Education"> Education </mat-tab>
+                  <mat-tab label="Designation"> Designation </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+    </div>
+</div>
