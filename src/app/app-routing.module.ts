@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { FormDataComponent } from './pages';
+import { FormDataComponent, RecordsComponent } from './pages';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'form',
+    redirectTo: 'records',
     pathMatch: 'full'
   },
   {
-    path: 'form',
-    component: FormDataComponent
+    path: 'records',
+    component: RecordsComponent
   },
 ];
 

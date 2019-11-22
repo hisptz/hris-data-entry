@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as fromHelpers from './shared/helpers';
 import { formsMetadata } from '../assets/dummy-data/forms';
 
 @Component({
@@ -9,20 +8,10 @@ import { formsMetadata } from '../assets/dummy-data/forms';
 })
 export class AppComponent implements OnInit {
 
-  
-  isPeriodSelected: boolean;
-  selectedForm: any;
-  periods: any[];
+  forms: any = formsMetadata;
 
-  constructor() {
-    this.periods = fromHelpers.getPeriodsBasedOnType('Yearly', new Date().getFullYear());
-  }
+  constructor() {}
 
   ngOnInit() {}
 
-  
-
-  periodSelect(e) {
-    this.isPeriodSelected = true;
-  }
 }

@@ -10,7 +10,6 @@ import { userDummyData } from '../../../assets/dummy-data/dummyUserData';
 })
 export class FormDataComponent implements OnInit {
 
-  forms: any = formsMetadata;
   elementData: any[] = userDummyData;
   tableHeaders: string[] = ['index', 'name', 'designation', 'lastupdated', 'actions'];
   dataSource = new MatTableDataSource<any>(this.elementData);
