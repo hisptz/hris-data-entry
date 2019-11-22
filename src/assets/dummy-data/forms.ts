@@ -343,4 +343,6 @@ export const formsMetadata: any[] = [
               }
             ]
         }
-    ];
+];
+
+export const recordType: any[] = ['Private', 'Public', 'Referral'];

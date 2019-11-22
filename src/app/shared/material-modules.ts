@@ -4,7 +4,7 @@ import {
     MatNativeDateModule, MatRippleModule, MatCardModule,
     MatFormFieldModule, MatInputModule, MatButtonModule,
     MatTooltipModule, MatProgressBarModule, MatSelectModule,
-    MatTableModule, MatPaginatorModule, MatMenuModule
+    MatTableModule, MatPaginatorModule, MatMenuModule, MatTabsModule
 } from '@angular/material';
 
 export const materialModules: any[] = [
@@ -15,5 +15,5 @@ export const materialModules: any[] = [
     MatProgressBarModule, MatSelectModule,
     MatTableModule, MatPaginatorModule,
     MatIconModule, MatButtonToggleModule,
-    MatMenuModule
+    MatMenuModule, MatTabsModule
 ];

@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'records',
     component: RecordsComponent
   },
+  {
+    path: 'newrecord',
+    component: FormDataComponent
+  }
 ];
 
 @NgModule({
