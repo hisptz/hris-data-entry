@@ -1,0 +1,50 @@
+@import '~@angular/material/theming';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+@include mat-core();
+
+$hris-primary: mat-palette($mat-light-blue, 800);
+$hris-accent: mat-palette($mat-deep-orange, A200, A100, A400);
+$hris-warn: mat-palette($mat-red);
+$hris-theme: mat-light-theme($hris-primary, $hris-accent, $hris-warn);
+@include angular-material-theme($hris-theme);
+
+body {
+  background-color: #fafafa;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 10px 0 10px 0 !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-label {
+  top: 1.44em;
+  margin-top: 0;
+}
+
+.mat-tab-label-active {
+  font-weight: bolder !important;
+  background-color: rgba($color: #000000, $alpha: 0.1) !important;
+  border-top-right-radius: 5px !important;
+  border-top-left-radius: 5px !important;
+  opacity: 0.8 !important;
+}
+
+.mat-tab-label {
+  border-top-right-radius: 5px !important;
+  border-top-left-radius: 5px !important;
+  margin-right: 8px;
+  border: 1px solid rgba($color: #000000, $alpha: 0.2) !important;
+  border-bottom: 0px !important;
+}
+
+.app-button {
+  height: 48px;
+  margin-top: 4px !important;
+  font-size: 16px;
+  margin-bottom: 1.34375em !important;
+}
+
+.app-button:hover {
+  outline: none;
+}

@@ -25,6 +25,7 @@ import { RecordsComponent } from './pages/records/records.component';
 import { ManageRecordComponent } from './pages/manage-record/manage-record.component';
 import { NgxDhis2OrgUnitFilterModule } from '@iapps/ngx-dhis2-org-unit-filter';
 import { SharedModule } from './shared/shared.module';
+import { MatNativeDateModule } from '@angular/material/core';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -40,6 +41,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SharedModule,
     CoreModule,
     BrowserAnimationsModule,
+    MatNativeDateModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(effects),
     NgxDhis2HttpClientModule.forRoot({

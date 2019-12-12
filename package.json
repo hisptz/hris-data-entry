@@ -28,7 +28,7 @@
     "@angular/router": "^8.2.13",
     "@angular/service-worker": "^8.2.13",
     "@iapps/hris-menu": "^1.0.0-alpha.3",
-    "@iapps/ngx-dhis2-http-client": "^2.0.8-beta.3",
+    "@iapps/ngx-dhis2-http-client": "^2.0.8-beta.4",
     "@iapps/ngx-dhis2-org-unit-filter": "^1.1.21-beta.3",
     "@ngrx/effects": "^8.5.0",
     "@ngrx/entity": "^8.5.0",

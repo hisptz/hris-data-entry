@@ -1,11 +1,3 @@
-.record-table {
-  width: 100%;
-}
-
-th.mat-sort-header-sorted {
-  color: black;
-}
-
 .add-new-button {
   position: fixed;
   right: 20px;

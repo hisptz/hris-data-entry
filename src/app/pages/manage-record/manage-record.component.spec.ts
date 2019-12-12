@@ -4,6 +4,7 @@ import { ManageRecordComponent } from './manage-record.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatNativeDateModule } from '@angular/material/core';
 
 describe('ManageRecordComponent', () => {
   let component: ManageRecordComponent;
@@ -12,7 +13,12 @@ describe('ManageRecordComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ManageRecordComponent],
-      imports: [RouterTestingModule, SharedModule, BrowserAnimationsModule]
+      imports: [
+        RouterTestingModule,
+        MatNativeDateModule,
+        SharedModule,
+        BrowserAnimationsModule
+      ]
     }).compileComponents();
   }));
 

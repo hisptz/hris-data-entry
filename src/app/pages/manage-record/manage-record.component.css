@@ -1,3 +1,5 @@
-.record-entry-section {
-  margin-left: 65px;
+@media only screen and (max-width: 650px) {
+  .record-title {
+    display: block;
+  }
 }

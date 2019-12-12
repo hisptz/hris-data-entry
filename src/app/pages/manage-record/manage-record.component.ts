@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-manage-record',
-  templateUrl: './manage-record.component.html',
-  styleUrls: ['./manage-record.component.css']
+  selector: "app-manage-record",
+  templateUrl: "./manage-record.component.html",
+  styleUrls: ["./manage-record.component.css"]
 })
 export class ManageRecordComponent implements OnInit {
   recordTypes: any[];
@@ -12,12 +12,12 @@ export class ManageRecordComponent implements OnInit {
   ngOnInit() {
     this.recordTypes = [
       {
-        id: 'PRIVATE',
-        name: 'Private'
+        id: "PRIVATE",
+        name: "Private"
       },
       {
-        id: 'PUBLIC',
-        name: 'Public'
+        id: "PUBLIC",
+        name: "Public"
       }
     ];
   }

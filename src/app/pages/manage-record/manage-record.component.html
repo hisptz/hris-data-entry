@@ -1,36 +1,191 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 mt-4">
-      <div class="d-flex align-items-center">
-        <button mat-icon-button class="mr-4" [routerLink]="['']">
-          <mat-icon>arrow_back</mat-icon>
-        </button>
-        <h3 class="mt-3">Record Form for [Selected organisation unit]</h3>
-      </div>
+      <button mat-stroked-button class="mr-4 app-button" [routerLink]="['']">
+        <mat-icon>view_list</mat-icon>
+        <span class="ml-2">Back to List</span>
+      </button>
+      <span class="mt-2 h5 record-title">Record Form for [Selected organisation unit]</span>
+    </div>
+  </div>
+  <div class="row">
 
-      <!-- record type -->
-      <div class="mt-3 record-entry-section">
-        <mat-form-field class="w-25">
-          <mat-label>Record Type</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let recordType of recordTypes" [value]="recordType.id">
-              {{recordType.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+    <div class="col-12">
+      <!-- form content -->
+      <mat-tab-group dynamicHeight="true">
+        <mat-tab label="Basic Details">
+          <div class="mt-4">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput placeholder="Enter first name">
+            </mat-form-field>
 
-        <!-- form content -->
-        <mat-tab-group>
-          <mat-tab label="Basic">
-            <div></div>
-          </mat-tab>
-          <mat-tab label="Education">Content 2</mat-tab>
-          <mat-tab label="Designation">Content 3</mat-tab>
-        </mat-tab-group>
-        <!-- end of form content -->
-      </div>
-      <!-- end of record type -->
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Middle Name</mat-label>
+              <input matInput placeholder="Enter middle name">
+            </mat-form-field>
 
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Surname</mat-label>
+              <input matInput placeholder="Enter surname">
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Sex</mat-label>
+              <mat-select>
+                <mat-option [value]="'MALE'">
+                  Male
+                </mat-option>
+                <mat-option [value]="'FEMALE'">
+                  Female
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Marital Status</mat-label>
+              <mat-select>
+                <mat-option [value]="'SINGLE'">
+                  Single
+                </mat-option>
+                <mat-option [value]="'MARRIED'">
+                  Married
+                </mat-option>
+                <mat-option [value]="'DIVORCED'">
+                  Divorced
+                </mat-option>
+                <mat-option [value]="'WIDOWED'">
+                  Widowed
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Nationality</mat-label>
+              <input matInput placeholder="Enter surname">
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Religion</mat-label>
+              <input matInput placeholder="Enter surname">
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Number of Children/Dependants</mat-label>
+              <input matInput placeholder="Enter surname">
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>District of Domicile</mat-label>
+              <input matInput placeholder="Enter surname">
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Contacts</mat-label>
+              <input matInput placeholder="Enter surname">
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Next of kin</mat-label>
+              <input matInput placeholder="Enter surname">
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Relationship with next of kin</mat-label>
+              <input matInput placeholder="Enter surname">
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Contact of next of kin</mat-label>
+              <input matInput placeholder="Enter surname">
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Registered disability</mat-label>
+              <input matInput placeholder="Enter surname">
+            </mat-form-field>
+
+            <button mat-flat-button color="primary" class="app-button mr-2">
+              <mat-icon>save</mat-icon>
+              <span class="ml-2">Save Record</span>
+            </button>
+            <button mat-stroked-button class="ml-5" class="app-button">
+              <mat-icon>cancel_presentation</mat-icon>
+              <span class="ml-2">Cancel</span>
+            </button>
+          </div>
+        </mat-tab>
+        <mat-tab label="Education">
+          <div class="row mt-4">
+            <div class="col-sm-7">
+              <app-table></app-table>
+            </div>
+            <div class="col-sm-5"></div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Employment">
+          <div class="row mt-4">
+            <div class="col-sm-7">
+              <app-table></app-table>
+            </div>
+            <div class="col-sm-5">
+              <mat-card>
+                <h5>Employment Form</h5>
+                <mat-form-field class="w-100" appearance="outline">
+                  <mat-label>Check number</mat-label>
+                  <input matInput placeholder="Enter surname">
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                  <mat-label>File number</mat-label>
+                  <input matInput placeholder="Enter surname">
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                  <mat-label>Registration number</mat-label>
+                  <input matInput placeholder="Enter surname">
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                  <mat-label>Terms of employment</mat-label>
+                  <input matInput placeholder="Enter surname">
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                  <mat-label>Employer</mat-label>
+                  <input matInput placeholder="Enter surname">
+                </mat-form-field>
+
+                <mat-form-field class="w-100" appearance="outline">
+                  <mat-label>Date of First Appointment</mat-label>
+                  <input matInput [matDatepicker]="appointment" placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="appointment"></mat-datepicker-toggle>
+                  <mat-datepicker #appointment></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class="w-100" appearance="outline">
+                  <mat-label>Date of Confirmation</mat-label>
+                  <input matInput [matDatepicker]="confirmation" placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="confirmation"></mat-datepicker-toggle>
+                  <mat-datepicker #confirmation></mat-datepicker>
+                </mat-form-field>
+              </mat-card>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Training">
+          <div class="row mt-4">
+            <div class="col-sm-7">
+              <app-table></app-table>
+            </div>
+            <div class="col-sm-5"></div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+      <!-- end of form content -->
     </div>
   </div>
 </div>
