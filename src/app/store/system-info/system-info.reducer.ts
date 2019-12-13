@@ -1,15 +1,16 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { addSystemInfo, loadSystemInfo, loadSystemInfoFail } from '../actions';
 import {
-  initialSystemInfoState,
-  SystemInfoState
-} from '../states/system-info.state';
+  addSystemInfo,
+  loadSystemInfo,
+  loadSystemInfoFail
+} from '../system-info/system-info.actions';
+import { initialSystemInfoState, SystemInfoState } from './system-info.state';
 import {
   loadingBaseState,
   loadedBaseState,
   errorBaseState
-} from '../states/base.state';
+} from '../base.state';
 
 export const reducer = createReducer(
   initialSystemInfoState,

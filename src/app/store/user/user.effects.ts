@@ -8,7 +8,7 @@ import {
   addCurrentUser,
   loadCurrentUser,
   loadCurrentUserFail
-} from '../actions';
+} from '../user/user.actions';
 
 @Injectable()
 export class UserEffects implements OnInitEffects {

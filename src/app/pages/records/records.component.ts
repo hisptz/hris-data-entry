@@ -3,8 +3,8 @@ import { OrgUnitFilterConfig } from '@iapps/ngx-dhis2-org-unit-filter';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { Store } from '@ngrx/store';
-import { State } from 'src/app/store/reducers';
-import { go } from 'src/app/store/actions';
+import { State } from 'src/app/store/store.reducer';
+import { go } from 'src/app/store/router/router.actions';
 
 @Component({
   selector: 'app-records',

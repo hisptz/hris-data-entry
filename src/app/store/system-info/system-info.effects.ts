@@ -7,7 +7,11 @@ import { Actions, createEffect, ofType, OnInitEffects } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 
-import { addSystemInfo, loadSystemInfo, loadSystemInfoFail } from '../actions';
+import {
+  addSystemInfo,
+  loadSystemInfo,
+  loadSystemInfoFail
+} from './system-info.actions';
 
 @Injectable()
 export class SystemInfoEffects implements OnInitEffects {

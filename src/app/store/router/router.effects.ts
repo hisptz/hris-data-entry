@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { tap } from 'rxjs/operators';
 
-import { back, forward, go } from '../actions/router.actions';
+import { back, forward, go } from './router.actions';
 
 @Injectable()
 export class RouterEffects {

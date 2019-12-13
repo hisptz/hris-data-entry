@@ -4,13 +4,13 @@ import {
   addCurrentUser,
   loadCurrentUser,
   loadCurrentUserFail
-} from '../actions/user.actions';
-import { initialUserState, UserState } from '../states/user.state';
+} from './user.actions';
+import { initialUserState, UserState } from './user.state';
 import {
   loadingBaseState,
   loadedBaseState,
   errorBaseState
-} from '../states/base.state';
+} from '../base.state';
 
 export const reducer = createReducer(
   initialUserState,
