@@ -1,0 +1,194 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2 mt-4">
+            <button mat-stroked-button class="app-button" [routerLink]="['']">
+                <mat-icon inline=true>view_list</mat-icon>
+                <span class="ml-2">Back to List</span>
+            </button>
+            <mat-card class="d-flex justify-content-center">
+                <div>
+                    <div class="record-profile">
+                        <div class="d-flex justify-content-center align-items-center text-muted record-profile-image">
+                            RM
+                        </div>
+                        <div class="text-center h5 mt-3">Rajab Mkomwa</div>
+                        <div class="text-center text-muted mb-3">Medical Doctor</div>
+                    </div>
+                </div>
+            </mat-card>
+            <mat-nav-list class="bg-white mat-elevation-z1 mt-3">
+                <a mat-list-item>Overview</a>
+                <a mat-list-item>Employment</a>
+                <a mat-list-item>Training</a>
+            </mat-nav-list>
+            <div style="margin-top: 40px">
+                <button mat-stroked-button color="warn" class="app-button">
+                    <mat-icon>delete</mat-icon>
+                    Remove
+                </button>
+            </div>
+        </div>
+        <div class="col-sm-10 mt-4">
+            <div class="row">
+                <div class="col">
+                    <mat-card>
+                        <mat-card-subtitle>Status</mat-card-subtitle>
+                        <mat-card-title class="record-header-title">On Duty</mat-card-title>
+                    </mat-card>
+                </div>
+                <div class="col">
+                    <mat-card>
+                        <mat-card-subtitle>Work Location</mat-card-subtitle>
+                        <mat-card-title class="record-header-title">Kinondoni Municipal Council</mat-card-title>
+                    </mat-card>
+                </div>
+                <div class="col">
+                    <mat-card>
+                        <mat-card-subtitle>Age</mat-card-subtitle>
+                        <mat-card-title class="record-header-title">52 Years Old</mat-card-title>
+                    </mat-card>
+                </div>
+                <div class="col">
+                    <mat-card>
+                        <mat-card-subtitle>Gender</mat-card-subtitle>
+                        <mat-card-title class="record-header-title">Male</mat-card-title>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-7 mt-4">
+                    <mat-card>
+                        <div class="d-flex justify-content-between">
+                            <mat-card-title>Overview</mat-card-title>
+                            <div class="d-flex align-items-center">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Search Fields</mat-label>
+                                    <input matInput>
+                                    <mat-icon matPrefix>search</mat-icon>
+                                </mat-form-field>
+                                <button class="ml-2 app-button" mat-stroked-button>
+                                    <mat-icon>edit</mat-icon>
+                                    Edit
+                                </button>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="mt-4">
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>First Name</mat-label>
+                                <input matInput placeholder="Enter first name">
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Middle Name</mat-label>
+                                <input matInput placeholder="Enter middle name">
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Surname</mat-label>
+                                <input matInput placeholder="Enter surname">
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Date of Birth</mat-label>
+                                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Sex</mat-label>
+                                <mat-select>
+                                    <mat-option [value]="'MALE'">
+                                        Male
+                                    </mat-option>
+                                    <mat-option [value]="'FEMALE'">
+                                        Female
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <div class="d-flex">
+                                <mat-form-field class="w-100" appearance="outline">
+                                    <mat-label>Marital Status</mat-label>
+                                    <mat-select>
+                                        <mat-option [value]="'SINGLE'">
+                                            Single
+                                        </mat-option>
+                                        <mat-option [value]="'MARRIED'">
+                                            Married
+                                        </mat-option>
+                                        <mat-option [value]="'DIVORCED'">
+                                            Divorced
+                                        </mat-option>
+                                        <mat-option [value]="'WIDOWED'">
+                                            Widowed
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <button title="View History" mat-stroked-button class="ml-1 app-button">
+                                    <mat-icon style="font-size: 25px" inline=true>history</mat-icon>
+                                </button>
+                            </div>
+
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Nationality</mat-label>
+                                <input matInput placeholder="Enter surname">
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Religion</mat-label>
+                                <input matInput placeholder="Enter surname">
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Number of Children/Dependants</mat-label>
+                                <input matInput placeholder="Enter surname">
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>District of Domicile</mat-label>
+                                <input matInput placeholder="Enter surname">
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Contacts</mat-label>
+                                <input matInput placeholder="Enter surname">
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Next of kin</mat-label>
+                                <input matInput placeholder="Enter surname">
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Relationship with next of kin</mat-label>
+                                <input matInput placeholder="Enter surname">
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Contact of next of kin</mat-label>
+                                <input matInput placeholder="Enter surname">
+                            </mat-form-field>
+
+                            <mat-form-field class="w-100" appearance="outline">
+                                <mat-label>Registered disability</mat-label>
+                                <input matInput placeholder="Enter surname">
+                            </mat-form-field>
+
+                            <button mat-flat-button color="primary" class="app-button mr-2">
+                                <mat-icon>save</mat-icon>
+                                <span class="ml-2">Save</span>
+                            </button>
+                            <button mat-stroked-button class="ml-5" class="app-button">
+                                <mat-icon>cancel_presentation</mat-icon>
+                                <span class="ml-2">Cancel</span>
+                            </button>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

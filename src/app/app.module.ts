@@ -1,10 +1,12 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HrisMenuModule } from '@iapps/hris-menu';
 import { NgxDhis2HttpClientModule } from '@iapps/ngx-dhis2-http-client';
+import { NgxDhis2OrgUnitFilterModule } from '@iapps/ngx-dhis2-org-unit-filter';
 import { EffectsModule } from '@ngrx/effects';
 import {
   RouterStateSerializer,
@@ -18,14 +20,12 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { RoutingModule } from './app.routes';
-import { CoreModule, RouteSerializer } from './core';
+import { components } from './components';
+import { MaterialModule } from './material/material.module';
+import { containers } from './containers';
 import { effects } from './store/store.effects';
 import { metaReducers, reducers } from './store/store.reducer';
-import { RecordsComponent } from './pages/records/records.component';
-import { ManageRecordComponent } from './pages/manage-record/manage-record.component';
-import { NgxDhis2OrgUnitFilterModule } from '@iapps/ngx-dhis2-org-unit-filter';
-import { SharedModule } from './shared/shared.module';
-import { MatNativeDateModule } from '@angular/material/core';
+import { RouteSerializer } from './utils';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -33,13 +33,12 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, RecordsComponent, ManageRecordComponent],
+  declarations: [AppComponent, ...components, ...containers],
   imports: [
     BrowserModule,
     HttpClientModule,
     RoutingModule,
-    SharedModule,
-    CoreModule,
+    MaterialModule,
     BrowserAnimationsModule,
     MatNativeDateModule,
     StoreModule.forRoot(reducers, { metaReducers }),

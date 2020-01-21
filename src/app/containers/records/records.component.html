@@ -9,25 +9,17 @@
           <mat-form-field class="w-100" appearance="outline">
             <mat-label>Form</mat-label>
             <mat-select>
-              <mat-option *ngFor="let recordType of recordTypes" [value]="recordType.id">
-                {{recordType.name}}
+              <mat-option *ngFor="let form of forms$ | async" [value]="form.id">
+                {{form.name}}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
-        <div class="col">
-          <mat-form-field class="w-100" appearance="outline">
-            <mat-label>Record Type</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let recordType of recordTypes" [value]="recordType.id">
-                {{recordType.name}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
+        <div class="col"></div>
       </div>
 
       <!-- record list -->
+      <router-outlet></router-outlet>
 
       <app-table (selectItem)="onSelectRecord($event)"></app-table>
       <!-- end of record list -->

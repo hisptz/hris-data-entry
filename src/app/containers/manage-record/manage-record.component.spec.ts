@@ -1,10 +1,8 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ManageRecordComponent } from './manage-record.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatNativeDateModule } from '@angular/material/core';
 
 describe('ManageRecordComponent', () => {
   let component: ManageRecordComponent;
@@ -13,12 +11,8 @@ describe('ManageRecordComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ManageRecordComponent],
-      imports: [
-        RouterTestingModule,
-        MatNativeDateModule,
-        SharedModule,
-        BrowserAnimationsModule
-      ]
+      imports: [RouterTestingModule],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
