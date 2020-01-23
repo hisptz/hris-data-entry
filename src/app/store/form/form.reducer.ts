@@ -1,6 +1,11 @@
 import { createReducer, Action, on } from '@ngrx/store';
 import { initialFormState, FormState, formAdapter } from './form.state';
-import { loadForms, addForms, handleLoadFormsError } from './form.actions';
+import {
+  loadForms,
+  addForms,
+  handleLoadFormsError,
+  setCurrentForm
+} from './form.actions';
 import {
   loadingBaseState,
   loadedBaseState,
@@ -20,6 +25,10 @@ const reducer = createReducer(
     ...state,
     ...errorBaseState,
     error
+  })),
+  on(setCurrentForm, (state, { currentFormId }) => ({
+    ...state,
+    currentFormId
   }))
 );
 

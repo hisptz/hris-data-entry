@@ -4,7 +4,8 @@ import { ErrorMessage } from '@iapps/ngx-dhis2-http-client';
 enum FormActionTypes {
   LoadForms = '[Form] LOAD_FORMS',
   AddForms = '[Form] ADD_FORMS',
-  HandleLoadFormsError = '[Form] HANDLE_LOAD_FORM_ERROR'
+  HandleLoadFormsError = '[Form] HANDLE_LOAD_FORM_ERROR',
+  SetCurrentForm = '[Form] SET_CURRENT_FORM'
 }
 
 export const loadForms = createAction(FormActionTypes.LoadForms);
@@ -17,4 +18,9 @@ export const addForms = createAction(
 export const handleLoadFormsError = createAction(
   FormActionTypes.HandleLoadFormsError,
   props<{ error: ErrorMessage }>()
+);
+
+export const setCurrentForm = createAction(
+  FormActionTypes.SetCurrentForm,
+  props<{ currentFormId: string }>()
 );

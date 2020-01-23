@@ -3,12 +3,15 @@ import { FormModel } from 'src/app/models/form.model';
 
 import { BaseState, initialBaseState } from '../base.state';
 
-export interface FormState extends EntityState<FormModel>, BaseState {}
+export interface FormState extends EntityState<FormModel>, BaseState {
+  currentFormId: string;
+}
 
 export const formAdapter: EntityAdapter<FormModel> = createEntityAdapter<
   FormModel
 >();
 
 export const initialFormState: FormState = formAdapter.getInitialState({
-  ...initialBaseState
+  ...initialBaseState,
+  currentFormId: ''
 });

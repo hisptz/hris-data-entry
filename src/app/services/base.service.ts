@@ -13,10 +13,15 @@ export class BaseService<T> {
     throw Error('Model not set');
   }
 
-  findAll(queryParameters: ApiQueryParameter): Observable<T[]> {
+  findAll(queryParameters?: ApiQueryParameter): Observable<T[]> {
     return this.httpClient.get(
-      `${this.model}?paging=${queryParameters.paging || true}`,
-      { useIndexDb: queryParameters.useIndexDb || false }
+      `${this.model}?paging=${
+        queryParameters ? queryParameters.paging || true : true
+      }`
     );
+  }
+
+  findById(id: string, queryParameters?: ApiQueryParameter) {
+    return this.httpClient.get(`${this.model}/${id}`);
   }
 }

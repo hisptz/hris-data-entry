@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row ">
+  <div class="row">
     <div class="col-12 mt-4">
       <div class="row">
         <div class="col">
@@ -8,7 +8,7 @@
         <div class="col">
           <mat-form-field class="w-100" appearance="outline">
             <mat-label>Form</mat-label>
-            <mat-select>
+            <mat-select [value]="currentFormId$ | async" (selectionChange)="onSetCurrentForm($event)">
               <mat-option *ngFor="let form of forms$ | async" [value]="form.id">
                 {{form.name}}
               </mat-option>
@@ -19,9 +19,11 @@
       </div>
 
       <!-- record list -->
-      <router-outlet></router-outlet>
-
-      <app-table (selectItem)="onSelectRecord($event)"></app-table>
+      <div class="record-notification" style="margin-top: 50px;" *ngIf="(currentFormId$ | async) === ''">
+        <app-message-notification [message]="'Select form to view records'"></app-message-notification>
+      </div>
+      <app-record-list [fieldIds]="fieldIds$ | async" [fieldEntities]="fieldEntities$ | async"
+        *ngIf="(currentFormId$ | async) !== ''" (selectItem)="onSelectRecord($event)"></app-record-list>
       <!-- end of record list -->
     </div>
   </div>
