@@ -12,6 +12,7 @@ import {
   getCurrentFieldEntities
 } from 'src/app/store/form/form.selectors';
 import { setCurrentForm } from 'src/app/store/form/form.actions';
+import { getRecordsValuesBasedOnFieldId } from 'src/app/store/record/record.selectors';
 
 @Component({
   selector: 'app-records',
@@ -25,6 +26,7 @@ export class RecordsComponent implements OnInit {
   currentFormId$: Observable<string>;
   fieldIds$: Observable<string[]>;
   fieldEntities$: Observable<any>;
+  recordValues$: Observable<any[]>;
   constructor(private store: Store<State>) {}
 
   ngOnInit() {
@@ -32,6 +34,9 @@ export class RecordsComponent implements OnInit {
     this.currentFormId$ = this.store.pipe(select(getCurrentFormId));
     this.fieldIds$ = this.store.pipe(select(getCurrentFieldIdsForRecordList));
     this.fieldEntities$ = this.store.pipe(select(getCurrentFieldEntities));
+    this.recordValues$ = this.store.pipe(
+      select(getRecordsValuesBasedOnFieldId)
+    );
 
     this.orgUnitFilterConfig = {
       singleSelection: true,

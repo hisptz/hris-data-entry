@@ -23,7 +23,8 @@
         <app-message-notification [message]="'Select form to view records'"></app-message-notification>
       </div>
       <app-record-list [fieldIds]="fieldIds$ | async" [fieldEntities]="fieldEntities$ | async"
-        *ngIf="(currentFormId$ | async) !== ''" (selectItem)="onSelectRecord($event)"></app-record-list>
+        [recordValues]="recordValues$ | async" *ngIf="(currentFormId$ | async) !== ''"
+        (selectItem)="onSelectRecord($event)"></app-record-list>
       <!-- end of record list -->
     </div>
   </div>

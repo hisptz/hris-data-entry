@@ -8,7 +8,7 @@ import { Record } from 'src/app/models/record.model';
   styleUrls: ['./record-list.component.scss']
 })
 export class RecordListComponent implements OnInit {
-  @Input() records: Record[];
+  @Input() recordValues: any[];
   @Input() fieldEntities: { string: Field };
   @Input() fieldIds: string[];
   @Output() selectItem: EventEmitter<Record> = new EventEmitter<Record>();

@@ -36,6 +36,7 @@
             </td>
         </ng-container>
 
+
         <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
         <tr class="record-row" mat-row *matRowDef="let row; columns: columnsToDisplay;"
             (click)="onSelectItem($event, row)"></tr>
