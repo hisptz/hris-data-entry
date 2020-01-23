@@ -9,6 +9,7 @@ import { Field } from 'src/app/models/field.model';
 export class FieldComponent implements OnInit {
   @Input() field: Field;
   @Input() fieldReference: string;
+  @Input() disableField: boolean;
   constructor() {}
 
   ngOnInit() {}

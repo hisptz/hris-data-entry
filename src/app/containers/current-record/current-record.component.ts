@@ -13,9 +13,11 @@ import { getCurrentFormFields } from 'src/app/store/form/form.selectors';
 export class CurrentRecordComponent implements OnInit {
   formFields$: Observable<Field[]>;
   fieldSearchTerm: string;
+  disableField: boolean;
   constructor(private store: Store<State>) {}
 
   ngOnInit() {
+    this.disableField = true;
     this.formFields$ = this.store.pipe(select(getCurrentFormFields));
   }
 
@@ -26,5 +28,10 @@ export class CurrentRecordComponent implements OnInit {
   onSearchField(e) {
     e.stopPropagation();
     this.fieldSearchTerm = e.target.value;
+  }
+
+  onToggleFields(e) {
+    e.stopPropagation();
+    this.disableField = !this.disableField;
   }
 }
