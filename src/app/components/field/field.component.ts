@@ -8,9 +8,8 @@ import { Field } from 'src/app/models/field.model';
 })
 export class FieldComponent implements OnInit {
   @Input() field: Field;
+  @Input() fieldReference: string;
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.field);
-  }
+  ngOnInit() {}
 }

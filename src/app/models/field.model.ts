@@ -5,4 +5,6 @@ export interface Field {
   dataType: string;
   inputType: string;
   compulsory: boolean;
+  fieldOptions: any[];
+  hasHistory: boolean;
 }

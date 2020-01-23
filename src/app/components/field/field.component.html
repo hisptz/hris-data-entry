@@ -1,1 +1,42 @@
-<p>field works!</p>
+<div class="field-container d-flex" *ngIf="field">
+    <!-- text input -->
+    <mat-form-field [id]="field.id" *ngIf="field.dataType === 'String' && (field.fieldOptions || []).length === 0"
+        class="w-100" appearance="outline">
+        <mat-label>{{field.name}}</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <!-- end of text input -->
+
+    <!-- number input -->
+    <mat-form-field [id]="field.id" *ngIf="field.dataType === 'Integer' && (field.fieldOptions || []).length === 0"
+        class="w-100" appearance="outline">
+        <mat-label>{{field.name}}</mat-label>
+        <input matInput type="number">
+    </mat-form-field>
+    <!-- end of number input -->
+
+    <!-- select field -->
+    <mat-form-field [id]="field.id" *ngIf="field.fieldOptions && field.fieldOptions.length > 0" class="w-100"
+        appearance="outline">
+        <mat-label>{{field.name}}</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let fieldOption of field.fieldOptions" [value]="fieldOption.id">
+                {{fieldOption.value}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <!-- end of select field -->
+
+    <!-- date field -->
+    <mat-form-field [id]="field.id" *ngIf="field.dataType === 'Date'" class="w-100" appearance="outline">
+        <mat-label>{{field.name}}</mat-label>
+        <input matInput [matDatepicker]="fieldReference">
+        <mat-datepicker-toggle matSuffix [for]="fieldReference"></mat-datepicker-toggle>
+        <mat-datepicker #fieldReference></mat-datepicker>
+    </mat-form-field>
+    <!-- end of date field -->
+
+    <button *ngIf="field.hasHistory" title="View History" mat-stroked-button class="ml-1 app-button">
+        <mat-icon style="font-size: 25px" inline=true>history</mat-icon>
+    </button>
+</div>

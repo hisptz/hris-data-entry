@@ -29,7 +29,8 @@ export const getCurrentForm = createSelector(
 
 export const getCurrentFormFields = createSelector(
   getCurrentForm,
-  (currentForm: FormModel) => (currentForm ? currentForm.fields : [])
+  (currentForm: FormModel) =>
+    sortBy(currentForm ? currentForm.fields : [], 'sortOrder')
 );
 
 export const getCurrentFieldIdsForRecordList = createSelector(

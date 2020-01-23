@@ -10,7 +10,8 @@ export function sanitizeFormFieldList(formFieldMembers: any[]): Field[] {
       inputType: field.fieldInputType ? field.fieldInputType.name : '',
       compulsory: field.compulsory,
       fieldOptions: field.fieldOptions,
-      sortOrder: fieldMember.sort
+      sortOrder: fieldMember.sort,
+      hasHistory: fieldMember.hasHistory
     };
   });
 }
