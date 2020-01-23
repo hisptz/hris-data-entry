@@ -61,7 +61,7 @@
                             <div class="d-flex align-items-center">
                                 <mat-form-field appearance="outline">
                                     <mat-label>Search Fields</mat-label>
-                                    <input matInput>
+                                    <input matInput (keyup)="onSearchField($event)">
                                     <mat-icon matPrefix>search</mat-icon>
                                 </mat-form-field>
                                 <button class="ml-2 app-button" mat-stroked-button>
@@ -72,6 +72,10 @@
                         </div>
                         <mat-divider></mat-divider>
                         <div class="mt-4">
+                            <app-field
+                                *ngFor="let field  of formFields$ | async | filterBy:fieldSearchTerm:'name'; trackBy: trackByFn"
+                                [field]="field">
+                            </app-field>
                             <mat-form-field class="w-100" appearance="outline">
                                 <mat-label>First Name</mat-label>
                                 <input matInput placeholder="Enter first name">

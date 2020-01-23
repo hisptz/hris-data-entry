@@ -3,5 +3,6 @@ export interface Field {
   name: string;
   description: string;
   dataType: string;
+  inputType: string;
   compulsory: boolean;
 }

@@ -3,7 +3,8 @@ import { initialRecordState, RecordState, recordAdapter } from './record.state';
 import {
   loadRecords,
   addRecords,
-  handleLoadRecordsError
+  handleLoadRecordsError,
+  setCurrentRecord
 } from './record.actions';
 import {
   loadingBaseState,
@@ -24,6 +25,10 @@ const reducer = createReducer(
     ...state,
     ...errorBaseState,
     error
+  })),
+  on(setCurrentRecord, (state, { currentRecordId }) => ({
+    ...state,
+    currentRecordId
   }))
 );
 

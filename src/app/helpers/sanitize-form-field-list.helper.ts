@@ -7,6 +7,7 @@ export function sanitizeFormFieldList(formFieldMembers: any[]): Field[] {
       name: field.caption,
       description: field.description,
       dataType: field.dataType ? field.dataType.name : '',
+      inputType: field.fieldInputType ? field.fieldInputType.name : '',
       compulsory: field.compulsory,
       fieldOptions: field.fieldOptions,
       sortOrder: fieldMember.sort

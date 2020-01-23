@@ -26,6 +26,7 @@ import { containers } from './containers';
 import { effects } from './store/store.effects';
 import { metaReducers, reducers } from './store/store.reducer';
 import { RouteSerializer } from './utils';
+import { pipes } from './pipes';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -33,7 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, ...components, ...containers],
+  declarations: [AppComponent, ...components, ...containers, ...pipes],
   imports: [
     BrowserModule,
     HttpClientModule,

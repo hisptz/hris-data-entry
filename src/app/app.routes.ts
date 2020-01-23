@@ -8,16 +8,10 @@ import { CurrentRecordComponent } from './containers/current-record/current-reco
 export const routes: Routes = [
   {
     path: '',
-    component: RecordsComponent,
-    children: [
-      {
-        path: 'records/:formid/orgUnit/:orgunitid',
-        component: CurrentRecordComponent
-      }
-    ]
+    component: RecordsComponent
   },
   {
-    path: 'record/:id',
+    path: 'form/:id/record/:id',
     component: CurrentRecordComponent
   }
 ];

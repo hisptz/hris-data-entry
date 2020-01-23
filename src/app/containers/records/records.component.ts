@@ -13,6 +13,7 @@ import {
 } from 'src/app/store/form/form.selectors';
 import { setCurrentForm } from 'src/app/store/form/form.actions';
 import { getRecordsValuesBasedOnFieldId } from 'src/app/store/record/record.selectors';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-records',
@@ -46,7 +47,11 @@ export class RecordsComponent implements OnInit {
   }
 
   onSelectRecord(record: any) {
-    this.store.dispatch(go({ path: [`record/${record.id}`] }));
+    this.currentFormId$.pipe(take(1)).subscribe((currentFormId: string) => {
+      this.store.dispatch(
+        go({ path: [`form/${currentFormId}/record/${record.id}`] })
+      );
+    });
   }
 
   onSetCurrentForm({ value }) {
