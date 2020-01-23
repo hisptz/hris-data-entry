@@ -7,6 +7,7 @@ import { FormModel } from 'src/app/models/form.model';
 import { FormService } from 'src/app/services/form.service';
 
 import { addForms, handleLoadFormsError, loadForms } from './form.actions';
+import { sanitizeFormList } from 'src/app/helpers/sanitize-form-list.helper';
 
 @Injectable()
 export class FormEffects implements OnInitEffects {
@@ -14,8 +15,10 @@ export class FormEffects implements OnInitEffects {
     this.actions$.pipe(
       ofType(loadForms),
       switchMap(() =>
-        this.formService.findAll().pipe(
-          map((forms: FormModel[]) => addForms({ forms })),
+        this.formService.findAll({ paging: false }).pipe(
+          map((formResponse: any) =>
+            addForms({ forms: sanitizeFormList(formResponse) })
+          ),
           catchError((error: ErrorMessage) =>
             of(handleLoadFormsError({ error }))
           )

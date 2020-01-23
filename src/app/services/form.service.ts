@@ -1,45 +1,18 @@
 import { Injectable } from '@angular/core';
-import { BaseService } from './base.service';
-import { FormModel } from '../models/form.model';
-import { of } from 'rxjs';
+import { NgxDhis2HttpClientService } from '@iapps/ngx-dhis2-http-client';
 
-const FORMS: FormModel[] = [
-  {
-    id: '52893cd128bd2',
-    name: 'Public Employee Form'
-  },
-  {
-    id: '5af19640ab837',
-    code: null,
-    name: 'Sponsorship Application Form'
-  },
-  {
-    id: '52893cd15e933',
-    name: 'Employee Application Form'
-  },
-  {
-    id: '52893cd154e88',
-    name: 'Private/FBO Employee Form'
-  },
-  {
-    id: '52893cd15916e',
-    name: 'Hospital Employee Form'
-  }
-];
+import { FormModel } from '../models/form.model';
+import { BaseService } from './base.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormService extends BaseService<FormModel> {
-  constructor() {
-    super();
+  constructor(httpClient: NgxDhis2HttpClientService) {
+    super(httpClient);
   }
 
   get model() {
     return 'forms';
-  }
-
-  findAll() {
-    return of(FORMS);
   }
 }
