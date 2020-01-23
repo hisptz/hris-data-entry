@@ -45,8 +45,8 @@ export class RecordsComponent implements OnInit {
     };
   }
 
-  onSelectRecord(record) {
-    this.store.dispatch(go({ path: [`record/${record.position}`] }));
+  onSelectRecord(record: any) {
+    this.store.dispatch(go({ path: [`record/${record.id}`] }));
   }
 
   onSetCurrentForm({ value }) {

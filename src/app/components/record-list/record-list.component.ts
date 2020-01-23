@@ -17,6 +17,6 @@ export class RecordListComponent implements OnInit {
   ngOnInit() {}
 
   onSelectRecord(record: Record) {
-    console.log(record);
+    this.selectItem.emit(record);
   }
 }
